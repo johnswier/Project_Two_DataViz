@@ -1,0 +1,16 @@
+select spacewalks.crew, spacewalks.country,
+	space_missions.company_name, spacewalks.vehicle,
+	spacewalks.date
+FROM spacewalks 
+JOIN space_missions 
+ON spacewalks.date = space_missions.date
+ORDER BY date ASC;
+
+select * from spacewalks
+where date between '1969-01-01' and '1969-12-30';
+
+select * from space_missions 
+where date between '1969-01-01' and '1969-12-30';
+
+-- missing apollo missions from space_missions table!
+		
