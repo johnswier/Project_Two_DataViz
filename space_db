@@ -1,0 +1,28 @@
+select spacewalks.crew, spacewalks.country,
+	space_missions.company_name, spacewalks.vehicle,
+	spacewalks.date
+FROM spacewalks 
+JOIN space_missions 
+ON spacewalks.date = space_missions.date
+ORDER BY date ASC;
+
+select * from spacewalks
+where date between '1969-01-01' and '1969-12-30';
+
+select * from space_missions 
+where date between '1969-01-01' and '1969-12-30'
+order by date asc;
+
+-- missing apollo missions from space_missions table!
+
+select * from global_launches
+where country_of_launch = 'USA'
+and company_name = 'NASA'
+order by date asc;
+
+select * from astronauts
+where missions LIKE '%Apollo%';
+
+select * from spacewalks
+where purpose like '%First%';
+		
